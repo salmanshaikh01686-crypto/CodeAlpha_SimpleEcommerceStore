@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Login | ShopEasy{% endblock %}
+{% block content %}
+<div class="auth-card">
+    <p class="eyebrow">WELCOME BACK</p>
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Username</label>
+        <input name="username" required>
+        <label>Password</label>
+        <input type="password" name="password" required>
+        <button class="button button-large" type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+</div>
+{% endblock %}
